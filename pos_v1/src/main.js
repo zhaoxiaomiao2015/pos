@@ -44,10 +44,7 @@ function printInventory(inputs) {
             var exist = newInputs[i].barcode.indexOf('-');
             if (exist != -1) {
                 newInputs[i].count = 0;
-                // newInputs[i].barcode = newInputs[i].barcode.substring(0,exist);
-                // newInputs[i].count = newInputs[i].barcode.substring(11);
-                // console.log(newInputs[i].barcode.split('-'));
-                var temp = newInputs[i].barcode.split('-')
+                var temp = newInputs[i].barcode.split('-');
                 newInputs[i].count = temp[1];
                 newInputs[i].barcode = temp[0];
             }
@@ -76,7 +73,6 @@ function printInventory(inputs) {
             subtotal = fullInformationArray[i].price *fullInformationArray[i].count;
             for (j = 0; j< preferentialGoodsBarcode.length; j++) {
                 if (fullInformationArray[i].barcode === preferentialGoodsBarcode[j]) {
-                    //计算商品价格（买二送一）
                      subtotal = fullInformationArray[i].price *(fullInformationArray[i].count - Math.floor(fullInformationArray[i].count/3));
                      break;
                 }
