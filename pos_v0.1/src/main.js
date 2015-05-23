@@ -22,12 +22,13 @@ function printInventory(inputs) {
             array.push(temp);
         }
     }
-
-
     for(var i=0; i< array.length; i++){
         //得到数组i个子集和array[i]
         //取得子集和的每个元素 如：取到名称--array[i].name;
-        head = head + '名称：'+array[i].name+'，'+'数量：'+array[i].count+array[i].unit+'，单价：'+array[i].price.toFixed(2)+'(元)，小计：'+(array[i].price*array[i].count).toFixed(2)+'(元)\n';
+        head = head + '名称：'+array[i].name+'，'+
+        '数量：'+array[i].count+array[i].unit+
+        '，单价：'+array[i].price.toFixed(2)+
+        '(元)，小计：'+(array[i].price*array[i].count).toFixed(2)+'(元)\n';
         sum = sum + array[i].price*array[i].count;
     }
     var result = head + conter + '总计：' + sum.toFixed(2) + '(元)\n' +   footte;
